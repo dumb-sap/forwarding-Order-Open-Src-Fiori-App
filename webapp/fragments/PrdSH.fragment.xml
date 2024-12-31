@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <SelectDialog id="_IDSHPrdField" noDataText="No Records Found" title="Select Product" search="handleSearchPrd"
+        confirm="handlePrdValueHelp" cancel="handleClose" growingThreshold="10"
+        items="{ path: '/ztmShProductSet'}">
+        <StandardListItem id="_IDGenStandardListItem11" title="{Matnr}" description="{Maktg}" />
+    </SelectDialog>
+</core:FragmentDefinition>

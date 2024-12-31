@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <SelectDialog id="_IDSHSalesOrgField" noDataText="No Records Found" title="Select Sales Organization" search="handleSearchSalesOrg"
+        confirm="handleSalesOrgValueHelp" cancel="handleClose" growingThreshold="10"
+        items="{ path: '/ztmshOrgunitSet' }">
+        <StandardListItem id="_IDGenStandardListItem4" title="{ExternalId}" description="{Descr40}" />
+    </SelectDialog>
+</core:FragmentDefinition>

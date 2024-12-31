@@ -1,0 +1,75 @@
+<mvc:View 
+    xmlns:form="sap.ui.layout.form" 
+    controllerName="forwardingorder.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m" 
+    displayBlock="true">
+
+    <Page id="page" title="Create Forwarding Order">
+        <content>
+            <form:SimpleForm id="form" editable="true" layout="ResponsiveGridLayout">
+                <form:content>
+
+                    <Label id="_IDGenLabel3" text="Forwarding Order Type" />
+                    <HBox id="_IDGenHBox">
+                        <Input id="_IDGenInput3" value="{TRQ_TYPE_Type}" width="200px" 
+                        valueHelpRequest="onValHelpforTrqType" showValueHelp="true" />
+                        <Text id="descriptionText" text="{TRQ_TYPE_DESC}" width="290px" class="descriptionText"/>
+                    </HBox>
+
+                    <Label id="_IDGenLabel6" text="Transporation Mode"   />
+                    <HBox id="_IDGenHBox2">
+                        <Input id="_IDGenInput6" value="{MOT}" width="200px" 
+                        valueHelpRequest="onValHelpforMot" showValueHelp="true" />
+                        <Text id="descTextMot" text="{Bezei}" width="290px" class="descriptionText"/>
+                    </HBox>
+                  
+                    <Label id="_IDGenLabel9" text="Traffic Direction" />
+                    <HBox id="_IDGenHBox3">
+                    <Input id="_IDGenInput9" value="{TRAFFIC_DIRECT}" width="200px" valueHelpRequest="onValHelpforTrfDir" showValueHelp="true" />
+                    <Text id="descTextTrfDir" text="{}" width="290px" class="descriptionText"/>
+                    </HBox>
+                    
+                    <Label id="_IDGenLabel8" text="Shipping Type" />
+                    <HBox id="_IDGenHBox4">
+                    <Input id="_IDGenInput8" value="{SHIPPING_TYPE}" width="200px" valueHelpRequest="onValHelpforShiptype" showValueHelp="true" />
+                    <Text id="descTextShipType" text="{}" width="290px" class="descriptionText"/>
+                    </HBox>
+
+                    <Label id="_IDGenLabel10" text="Movement Type" />
+                    <HBox id="_IDGenHBox5">
+                    <Input id="_IDGenInput10" value="{MOVEM_TYPE}" width="200px"  valueHelpRequest="onValHelpforMovType" showValueHelp="true"/>
+                    <Text id="descTextMovType" text="{}" width="290px" class="descriptionText"/>
+                    </HBox>
+
+                    <Label id="_IDGenLabel11" text="Sales Organization" />
+                    <HBox id="_IDGenHBox6">
+                    <Input id="_IDGenInput11" value="{SALES_ORG_ID}" width="200px" valueHelpRequest="onValHelpforSalesOrg" showValueHelp="true"/>
+                    <Text id="descTextSalesOrg" text="{}" width="290px" class="descriptionText"/>
+                    </HBox>
+
+                    <Label id="_IDGenLabel12" text="Sales Office" />
+                    <HBox id="_IDGenHBox7">
+                    <Input id="_IDGenInput12" value="{SALES_OFF_ID}" width="200px" valueHelpRequest="onValHelpforSalesOff" showValueHelp="true"/>
+                    <Text id="descTextSalesOff" text="{}" width="290px" class="descriptionText"/>
+                    </HBox>
+
+                    <Label id="_IDGenLabel13" text="Sales Group" />
+                    <HBox id="_IDGenHBox8">
+                    <Input id="_IDGenInput13" value="{SALES_GROUP_ID}" width="200px" valueHelpRequest="onValHelpforSalesGrp" showValueHelp="true" />
+                    <Text id="descTextSalesGrp" text="{}" width="290px" class="descriptionText"/>
+                    </HBox>  
+
+                </form:content>
+            </form:SimpleForm>
+        </content>
+
+        <footer>
+            <Toolbar id="_IDGenbar1">               
+                <ToolbarSpacer id="_IDGenToolbarSp" />
+                <Button id="_IDGenButton1" text="Continue" press="onContinue"  type="Accept"/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>
+

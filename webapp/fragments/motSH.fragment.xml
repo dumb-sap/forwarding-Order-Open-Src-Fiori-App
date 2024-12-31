@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <SelectDialog id="_IDSHmotField" noDataText="No Records Found" title="Select Mode Of Transport" search="handleSearchMot"
+        confirm="handleMotValueHelpConfirm" cancel="handleClose" growingThreshold="10"
+        items="{ path: '/ZtrmodcodeSet' }">
+        <StandardListItem id="_IDGenStandardListItem" title="{Bezei}" description="{Vktra}" />
+    </SelectDialog>
+</core:FragmentDefinition>

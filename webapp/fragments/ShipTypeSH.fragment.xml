@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <TableSelectDialog id="_IDSHShipTypeField6" contentWidth="50%" noDataText="No Records Found" title="Select Shipping Type" search="handleSearchShipType"
+        confirm="handleShipTypeValueHelp" cancel="handleClose" growingThreshold="10"
+        items="{ path: '/ZtmshShtypeSet' }">
+        <columns>
+            <Column>
+                <Text text="Mode of Transp." />
+            </Column>
+            <Column>
+                <Text text="Shipping Type" />
+            </Column>
+            <Column>
+                <Text text="Description" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{Mot}" />
+                    <Text text="{ShippingType}" />
+                    <Text text="{Text}" />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </TableSelectDialog>
+</core:FragmentDefinition>
+
+
+
+
+

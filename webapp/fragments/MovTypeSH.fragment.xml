@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <SelectDialog id="_IDSHMovTypeField" noDataText="No Records Found" title="Select Movement Type" search="handleSearchMovType"
+        confirm="handleMovTypeValueHelp" cancel="handleClose" growingThreshold="10"
+        items="{ path: '/ZtmShMvmtySet' }">
+        <StandardListItem id="_IDGenStandardListItem5" title="{MovemType}" description="{DescriptionS}" />
+    </SelectDialog>
+</core:FragmentDefinition>

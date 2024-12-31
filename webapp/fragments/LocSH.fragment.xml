@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <TableSelectDialog id="_IDSHLocField9" contentWidth="70%" noDataText="No Records Found" title="Select Location" search="handleSearch"
+        confirm="handleLocValueHelp" cancel="handleClose" growingThreshold="10"
+        items="{ path: '/ZtmShLocSet' }">
+        <columns>
+            <Column>
+                <Text text="Location" />
+            </Column>
+            <Column>
+                <Text text="Location Description" />
+            </Column>
+            <Column>
+                <Text text="Location Type" />
+            </Column>
+            <Column>
+                <Text text="Country" />
+            </Column>
+            <Column>
+                <Text text="City" />
+            </Column>
+            <Column>
+                <Text text="Street" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{LocId}" />
+                    <Text text="{LocDesc}" />
+                    <Text text="{LocType}" />
+                    <Text text="{Country}" />
+                    <Text text="{City}" />
+                    <Text text="{Street}" />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </TableSelectDialog>
+</core:FragmentDefinition>
+
+
+
+
+

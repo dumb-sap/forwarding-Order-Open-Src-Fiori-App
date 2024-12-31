@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <SelectDialog id="_IDSHSalesOffField" noDataText="No Records Found" title="Select Sales Office" search="handleSearchSalesOff"
+        confirm="handleSalesOffValueHelp" cancel="handleClose" growingThreshold="10"
+        items="{ path: '/ZtmshSalesOffSet' }">
+        <StandardListItem id="_IDGenStandardListItem2" title="{ExternalId}" description="{Descr40}" />
+    </SelectDialog>
+</core:FragmentDefinition>

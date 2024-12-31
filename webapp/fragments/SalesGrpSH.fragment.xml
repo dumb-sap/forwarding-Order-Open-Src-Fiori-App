@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <SelectDialog id="_IDSHSalesGrpField" noDataText="No Records Found" title="Select Sales Group" search="handleSearchSalesOrg"
+        confirm="handleSalesGrpValueHelp" cancel="handleClose" growingThreshold="10"
+        items="{ path: '/ZtmshSalesGrpSet' }">
+        <StandardListItem id="_IDGenStandardListItem3" title="{ExternalId}" description="{Descr40}" />
+    </SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,310 @@
+<mvc:View xmlns:cards="sap.f.cards" 
+    controllerName="forwardingorder.controller.View2"
+	height="100%" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"  >
+	<!-- <Page id="_IDGenPage1" title="Forwarding Order $" class="sapUiFioriObjectPage" showHeader="true">
+
+ <Button id="_IDGenButton" text="Back" press="onBackPress" /> -->
+ <Page id="_IDGenPage1" 
+          class="sapUiFioriObjectPage"
+          showHeader="true" title="Forwarding Order $" showNavButton="true" navButtonPress="onBackPress">
+
+            <footer>
+            <Toolbar id="_IDGenSave">                
+                <ToolbarSpacer id="_IDGenToolbarS" />
+                <Button id="saveButton" text="Save" press="onSavePress" type="Emphasized"/>
+            </Toolbar>
+        	</footer>
+
+		<content>
+			<f:SimpleForm id="FieldGroupView"
+				maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+				title="" labelSpanL="4" labelSpanM="4"
+				emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2"
+				validateFieldGroup="onValidateFieldGroup">
+				<f:content>
+
+					<!-- Forwarding Order Data -->
+					<core:Title id="_IDGenTitle1" text="Forwarding Order Data" />
+					<Label id="_IDGenLabel2" text="Document"  />
+					<Input fieldGroupIds="Forwarding Order Data" value="{TRQ_ID}" id="TRQ_ID" editable="false" width="250px" visible="false"/>
+					<!-- <Label id="_IDGen2Label3" text="Document Type" />
+					<Input fieldGroupIds="Forwarding Order Data" value="{TRQ_TYPE}" id="TRQ_TYPE" editable="false" width="90px" />
+				    <Text id="descTextTrqType" text="{TRQ_TYPE_DESC}" width="auto" class="descriptionText"/> -->
+
+					<Label id="_IDGenLabel3" text="Document Type" />
+                    <HBox id="_IDGen2HBox1">
+                    <Input fieldGroupIds="Forwarding Order Data" id="TRQ_TYPE" value="{TRQ_TYPE}" width="100px" editable="false" />
+                    <Text id="descTextTrqType" text="{TRQ_TYPE_DESC}" width="290px" class="descriptionText"/>
+                    </HBox>
+
+					<Label id="_IDGen2Label11" text="Sales Organization" />
+					<HBox id="_IDGen2HBox2">
+					<Input fieldGroupIds="Forwarding Order Data" value="{SALES_ORG_ID}" id="SALES_ORG_ID" width="250px" showValueHelp="true"/>
+					<Text id="descTextSalesOrg" text="{}" width="290px" class="descriptionText"/>
+					</HBox>
+
+					<Label id="_IDGenLabel26" text="Lifecycle" /> 
+					<Input fieldGroupIds="Forwarding Order Data" value="{LIFECYCLE}" id="LIFECYCLE" width="250px" editable="false" /> 
+
+					<!-- General Terms -->
+					<core:Title id="_IDGenTitle2" text="General Terms" />
+					<!-- Transporatation Mode -->
+                    <Label id="_IDGen2Label6" text="Transportation Mode" />
+					<HBox id="_IDGen2HBox3">
+					<Input fieldGroupIds="General Terms" value="{MOT}" id="MOT" width="250px" showValueHelp="true" valueHelpRequest="onValHelpforMot"/>
+					<Text id="descTextMot" text="{Bezei}" width="290px" class="descriptionText"/>
+                    </HBox>
+					
+					<!-- Traffic Direction -->
+					<Label id="_IDGen2Label9" text="Traffic Direction" />
+					<HBox id="_IDGen2HBox4">
+					<Input fieldGroupIds="General Terms" value="{TRAFFIC_DIRECT}" id="TRAFFIC_DIRECT" width="250px" showValueHelp="true" valueHelpRequest="onValHelpforTrfDir"/>
+                    <Text id="descTextTrfDir" text="{}" width="290px" class="descriptionText"/>
+					</HBox>
+
+					<!-- Shipping Type -->
+					<Label id="_IDGen2Label8" text="Shipping Type" />
+					<HBox id="_IDGen2HBox5">
+					<Input fieldGroupIds="General Terms" value="{SHIPPING_TYPE}" id="SHIPPING_TYPE" width="150px" showValueHelp="true" valueHelpRequest="onValHelpforShiptype"/>			
+                    <Text id="descTextShipType" text="{}" width="290px" class="descriptionText"/>
+					</HBox>
+
+					<!-- Movement Type -->
+					<Label id="_IDGen2Label10" text="Movement Type" />
+					<HBox id="_IDGen2HBox6">
+					<Input fieldGroupIds="General Terms" value="{MOVEM_TYPE}" id="MOVEM_TYPE" width="250px" showValueHelp="true" valueHelpRequest="onValHelpforMovType"/>
+                    <Text id="descTextMovType" text="{}" width="290px" class="descriptionText"/>
+                    </HBox>
+
+					<!-- Business Partner -->
+					<core:Title id="_IDGenTitle3" text="Business Partner" />
+                    <Label id="_IDGenLabel16" text="Sold-to-Party" />
+					<HBox id="_IDGen2HBox7">
+					<Input fieldGroupIds="Party Information" value="{ORDER_PARTY_ID}" id="ORDER_PARTY_ID" width="250px" showValueHelp="true"/>	                    
+					<Text id="descTextOrdParty" text="{}" width="290px" class="descriptionText"/>
+                    </HBox>
+					
+					<Label id="_IDGenLabel14" text="Shipper" />
+					<HBox id="_IDGen2HBox8">
+					<Input fieldGroupIds="Party Information" value="{SHIPPER_ID}" id="SHIPPER_ID" width="250px" showValueHelp="true"/>
+                    <Text id="descTextShipper" text="{}" width="290px" class="descriptionText"/>
+                    </HBox>
+										
+					<Label id="_IDGenLabel15" text="Ship-to-Party" />
+					<HBox id="_IDGen2HBox9">
+					<Input fieldGroupIds="Party Information" value="{CONSIGNEE_ID}" id="CONSIGNEE_ID" width="250px" showValueHelp="true" />
+                    <Text id="descTextCosignee" text="{}" width="290px" class="descriptionText"/>
+                    </HBox>
+				   
+				    <!-- payer -->
+                    <!-- Bill to party -->
+                    <!-- notify -->
+
+                    <!-- <Label id="_IDGenLabel12" text="Sales Office ID" />
+					<Input fieldGroupIds="Business Partner" value="{SALES_OFF_ID}" id="SALES_OFF_ID" />
+					<Label id="_IDGenLabel13" text="Sales Group ID" />
+					<Input fieldGroupIds="Business Partner" value="{SALES_GROUP_ID}" id="SALES_GROUP_ID" /> -->
+                    
+					<!-- Text -->
+					<core:Title id="_IDGenTitle4" text="Notes" />
+					<Label id="_IDGenLabel25" text="Notes" />
+					<TextArea fieldGroupIds="Source" value="{NOTES}" id="NOTES" width="300px" rows="4" />
+
+
+<!-- '''''''''''''''''''''''''''''''''''''''''''''''''''''Source Location Information ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''-->
+					<core:Title id="_IDGenTitle5" text="Source" />
+					<Label id="_IDGenLabel17" text="Source Location" />
+					<!-- <Input fieldGroupIds="Source" value="{SRC_LOC_ID}" id="SRC_LOC_ID" width="250px" showValueHelp="true" valueHelpRequest="onValHelpforLoc"/> -->
+					<l:HorizontalLayout id="_IDHorizontalLayout02">
+    				<Input fieldGroupIds="Source Location" value="{SRC_LOC_ID}" id="SRC_LOC_ID" width="140px" showValueHelp="true"  valueHelpRequest="onValHelpforLoc" />
+    				<Label id="_IDempty01" text="" width="10px"/>
+					<Text fieldGroupIds="Source Location"  id="SRCLocDesc" width="200px"  editable="false"/>
+					</l:HorizontalLayout>
+					
+					
+					<Label id="_IDGenLabel18" text="UN/LOCODE" />
+					<Input fieldGroupIds="Source" value="{SRC_LOC_UNLOCODE}" id="SRC_LOC_UNLOCODE" width="250px" showValueHelp="true" />
+					<Label id="_IDGenLabel19" text="Requested Pickup Date" />
+					<DateTimePicker fieldGroupIds="Source" value="{PIC_EAR_REQ}" id="PIC_EAR_REQ" width="250px" />
+					<Label id="_IDGenLabel20" text="Confirmed Pickup Date" />                   
+					<DateTimePicker fieldGroupIds="Location Information" value="{PIC_EAR_CNF}" id="PIC_EAR_CNF" width="250px" />
+
+<!-- ''''''''''''''''''''''''''''''''''''''''''''''''''''''Destination Location Information ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''-->
+                    <core:Title id="_IDGenTitle7" text="Destination" />
+					<Label id="_IDGenLabel21" text="Destination Location" />					
+					<l:HorizontalLayout id="_IDHorizontalLayout03">
+    				<Input fieldGroupIds="Destination Location" value="{DES_LOC_ID}" id="DEST_LOC_ID" width="140px" showValueHelp="true"  valueHelpRequest="onValHelpforLoc" />
+    				<Label id="_IDempty00" text="" width="10px"/>
+					<Text fieldGroupIds="Destination Location" id="DESTLocDesc" width="200px"  editable="false"/>
+					</l:HorizontalLayout>
+										
+					<Label id="_IDGenLabel22" text="UN/LOCODE" />
+					<Input fieldGroupIds="Destination Location" value="{DES_LOC_UNLOCODE}" id="DEST_LOC_UNLOCODE" width="250px" showValueHelp="true" />
+					<Label id="_IDGenLabel23" text="Requested Delivery Date" />
+					<DateTimePicker fieldGroupIds="Destination Location" value="{DEL_LAT_REQ}" id="DEL_LAT_REQ" width="250px" />
+					<Label id="_IDGenLabel24" text="Confirmed Delivery Date" />
+					<DateTimePicker fieldGroupIds="Destination Location" value="{DEL_LAT_CNF}" id="DEL_LAT_CNF" width="250px" />
+
+<!--'''''''''''''''''''''''''''''''''''''''''''''''' Source Address''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' -->
+					<core:Title id="_IDGenTitle8" text="Address" />
+
+					<!-- Street/House No -->
+					<Label id="_IDSrcAddr" text="Street/House Number" />					
+					<l:HorizontalLayout id="_IDHorizontalLayout1">
+    				<Input fieldGroupIds="Source Location" value="{SRC_STREET}" id="SRC_STREET" width="140px" showValueHelp="true" editable="false" />
+    				<Label id="_IDempty02" text="" width="10px"/>
+					<Input fieldGroupIds="Source Location" value="{SRC_HOUSE_NO}" id="SRC_HOUSE_NO" width="100px"  showValueHelp="true" editable="false"/>
+					</l:HorizontalLayout>
+					
+					<!-- Postal Code/City -->
+					<Label id="_IDSrcPostCodeCity" text="Postal Code/City" />
+					<l:HorizontalLayout id="_IDHorizontalLayout2">
+    				<Input fieldGroupIds="Source Location" value="{SRC_POST_CODE}" id="SRC_POST_CODE" width="100px" showValueHelp="true" editable="false" />
+    				<Label id="_IDempty03" text="" width="10px"/>
+					<Input fieldGroupIds="Source Location" value="{SRC_CITY}" id="SRC_CITY" width="140px"  showValueHelp="true" editable="false"/>
+					</l:HorizontalLayout>
+
+					<!-- Region -->
+ 					<Label id="_IDSrcRegion" text="Region" />
+					<l:HorizontalLayout id="_IDHorizontalLayout3">
+					<Input fieldGroupIds="Source Location" value="{SRC_REGION}" id="SRC_REGION" width="100px" showValueHelp="true" editable="false"/>
+				 	<Label id="_IDempty05" text="" width="10px"/>
+					<Text fieldGroupIds="Source Location"  id="SRCRegionDesc" width="200px"  />
+					</l:HorizontalLayout>
+
+					<!-- Country -->
+					<Label id="_IDSrcCountry" text="Country" />
+					<l:HorizontalLayout id="_IDHorizontalLayout4">
+					<Input fieldGroupIds="Source Location" value="{SRC_COUNTRY}" id="SRC_COUNTRY" width="10px" showValueHelp="true" editable="false"/>
+					<Label id="_IDempty06" text="" width="30px"/>
+					<Text fieldGroupIds="Source Location"  id="SRCCountryDesc" width="100px"  />
+					</l:HorizontalLayout>
+
+<!-- '''''''''''''''''''''''''''''''''''''''''''''''''Destination Address ''''''''''''''''''''''''''''''''''''''''''''''''-->
+					<core:Title id="_IDGenTitle9" text="Address" />
+
+					<!-- Street/House No -->
+					<Label id="_IDDestAddr" text="Street/House Number" />					
+					<l:HorizontalLayout id="_IDHorizontalLayout5">
+    				<Input fieldGroupIds="Destination Location" value="{DEST_STREET}" id="DEST_STREET" width="140px" showValueHelp="true" editable="false" tooltip="DEST_STREET" />
+    				<Label id="_IDempty07" text="" width="10px"/>
+					<Input fieldGroupIds="Destination Location" value="{DEST_HOUSE_NO}" id="DEST_HOUSE_NO" width="100px"  showValueHelp="true" editable="false"/>
+					</l:HorizontalLayout>
+					
+					<!-- Postal Code/City -->
+					<Label id="_IDDESTPostCodeCity" text="Postal Code/City" />
+					<l:HorizontalLayout id="_IDHorizontalLayout6">
+    				<Input fieldGroupIds="Destination Location" value="{DEST_POST_CODE}" id="DEST_POST_CODE" width="100px" showValueHelp="true" editable="false"/>
+    				<Label id="_IDempty08" text="" width="10px"/>
+					<Input fieldGroupIds="Destination Location" value="{DEST_CITY}" id="DEST_CITY" width="140px" showValueHelp="true" editable="false" />
+					</l:HorizontalLayout>
+
+					<!-- Region -->
+ 					<Label id="_IDDESTRegion" text="Region" />
+					<l:HorizontalLayout id="_IDHorizontalLayout7">
+					<Input fieldGroupIds="Destination Location" value="{DEST_REGION}" id="DEST_REGION" width="100px" showValueHelp="true" editable="false"/>				 	
+				 	<Label id="_IDempty09" text="" width="10px"/>
+					<Text fieldGroupIds="Destination Location"  id="DESTRegionDesc" width="200px" />
+					</l:HorizontalLayout>
+
+					<!-- Country -->
+					<Label id="_IDDESTCountry" text="Country" />
+					<l:HorizontalLayout id="_IDHorizontalLayout8">
+					<Input fieldGroupIds="Destination Location" value="{DEST_COUNTRY}" id="DEST_COUNTRY" width="10px" showValueHelp="true" editable="false" />
+					<Label id="_IDempty10" text="" width="30px"/>
+					<Text fieldGroupIds="Destination Location"  id="DESTCountryDesc" width="100px"  />
+					</l:HorizontalLayout>
+				</f:content>
+			</f:SimpleForm>	
+
+<!-- ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''ITEM DETAILS''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' -->
+			<ScrollContainer height='20rem' vertical='true'>
+			<Table id="itemTable" width="auto" fixedLayout="Strict" items="{itemModel>/HeaderToItem}" mode="MultiSelect">
+				<headerToolbar>
+				<Toolbar id="_IDGenToolbar1">
+    			<Title id="_IDGenTitle20" text="Item Details" />
+
+    			<ToolbarSpacer id="_IDGenToolbarSpacer1" />
+    				<ComboBox id="onAddItem" selectionChange="onAddItem">
+        				<items>
+            				<core:Item key="Product" text="Product" />
+            				<core:Item key="Package" text="Package" />
+            				<core:Item key="Container" text="Container" />
+        				</items>
+    				</ComboBox>
+    				<Button icon= "sap-icon://delete" id="_IDGenButton3" text="Delete" press="onDeleteItem" type="Reject" />
+				</Toolbar>
+
+				</headerToolbar>
+				<columns>
+				<Column id="_IDGenColumn1">
+						<Label id="_IDTabLabel20" text="Item" />
+					</Column>
+					<Column id="_IDGenColumn2">
+						<Label id="_IDTabLabel21" text="Item Category" />
+					</Column>
+					<Column id="_IDGenColumn3">
+						<Label id="_IDTabLabel23" text="Item Description" />
+					</Column>	
+					<Column id="_IDGenColumn4">
+						<Label id="_IDTabLabel24" text="Product" />
+					</Column>	
+					<Column id="_IDGenColumn50">
+						<Label id="_IDTabLabel50" text="Product Description" />
+					</Column>
+					<Column id="_IDGenColumn5">
+						<Label id="_IDTabLabel25" text="Quantity" />
+					</Column>	
+					<Column id="_IDGenColumn6">
+						<Label id="_IDTabLabel26" text="Quantity UoM" />
+					</Column>	
+					<Column id="_IDGenColumn7">
+						<Label id="_IDTabLabel27" text="Gross Weight" />
+					</Column>	
+					<Column id="_IDGenColumn8">
+						<Label id="_IDTabLabel28" text="Gross Weight UoM" />
+					</Column>		
+					<Column id="_IDGenColumn9">
+						<Label id="_IDTabLabel29" text="Gross Volume" />
+					</Column>	
+					<Column id="_IDGenColumn10">
+						<Label id="_IDTabLabel30" text="Gross Volume UoM" />
+					</Column>		
+					<Column id="_IDGenColumn11">
+						<Label id="_IDTabLabel31" text="Dummy" />
+					</Column>
+					<Column id="_IDGenColumn12">
+						<Label id="_IDTabLabel32" text="Dummy" />
+					</Column>
+					<Column id="_IDGenColumn13">
+						<Label id="_IDTabLabel33" text="Dummy" />
+					</Column>
+
+					<Column id="_IDGenColumn14">
+						<Label id="_IDTabLabel34" text="Dummy" />
+					</Column>
+
+				</columns>
+				<items>
+					<ColumnListItem id="_IDGenColumnListItem1">
+						<cells>
+ 							<Input id="ITEM_ID" value="{itemModel>ITEM_ID}"  editable= "false"/>
+                			<Input id="ITEM_CAT" value="{itemModel>ITEM_CAT}" editable= "false"/>
+                			<Input id="ITEM_DESCR" value="{itemModel>ITEM_DESCR}" />
+                			<Input id="PRODUCT_ID" value="{itemModel>PRODUCT_ID}" showValueHelp="true" valueHelpRequest="onValHelpforPrd"/>
+                			<Input id="PRODUCT_DESC" value="{itemModel>PRODUCT_DESC}" editable="false" width="auto" tooltip="{itemModel>PRODUCT_DESC}"/>
+                			<Input id="QUA_PCS_VAL" value="{itemModel>QUA_PCS_VAL}"  type="Number"/>
+                			<Input id="QUA_PCS_UNI" value="{itemModel>QUA_PCS_UNI}" showValueHelp="true" valueHelpRequest="onValHelpforQty" />
+                			<Input id="GRO_WEI_VAL" value="{itemModel>GRO_WEI_VAL}" type="Number" />
+                			<Input id="GRO_WEI_UNI" value="{itemModel>GRO_WEI_UNI}" showValueHelp="true" valueHelpRequest="onValHelpforWei" />
+                			<Input id="GRO_VOL_VAL" value="{itemModel>GRO_VOL_VAL}" type="Number" />
+                			<Input id="GRO_VOL_UNI" value="{itemModel>GRO_VOL_UNI}" showValueHelp="true" valueHelpRequest="onValHelpforVol"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			</ScrollContainer>
+		</content>
+	</Page>
+</mvc:View>

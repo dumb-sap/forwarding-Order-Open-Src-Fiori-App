@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <SelectDialog 
+        id="_IDSHDialogTrfDir" 
+        noDataText="No Records Found" 
+        title="Select Traffic Direction" 
+        search="handleSearchTrfDir" 
+        confirm="handleTrfDirValueHelp" 
+        cancel="handleClose" 
+        growingThreshold="10">
+        
+        <items>
+            <StandardListItem title="{trafficDirection>title}" description="{trafficDirection>code}" />
+        </items>
+    </SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,38 @@
+specVersion: "3.1"
+metadata:
+  name: forwardingorder
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+        backend:
+          - path: /sap
+            url: http://sap-s4-hana.internal.cloudapp.net:8001/
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: sap-fe-mockserver
+      beforeMiddleware: csp
+      configuration:
+        mountPath: /
+        services:
+          - urlPath: /sap/opu/odata/sap/ZTM_FRW_ORDER_SRV
+            generateMockData: true
+            metadataXmlPath: ./webapp/localService/metadata.xml
+            mockdataRootPath: ./webapp/localService/data
+          - urlPath: /sap/opu/odata/sap/ZTM_FRW_ORDER_SRV/
+            metadataPath: ./webapp/localService/metadata.xml
+            mockdataPath: ./webapp/localService/mockdata
+            generateMockData: true
+        annotations: []

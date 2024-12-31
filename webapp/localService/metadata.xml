@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZTM_FRW_ORDER_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="FrwHeader" sap:label="Header Details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ROOT_KEY"/>
+                </Key>
+                <Property Name="NOTES" Type="Edm.String" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ROOT_KEY" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="DB Key" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TRQ_ID" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Document" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="TRQ_TYPE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Document Type" sap:sortable="false"/>
+                <Property Name="TRQ_CAT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Document Category" sap:sortable="false"/>
+                <Property Name="LABELTXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Label" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MOT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Transportation Mode" sap:sortable="false"/>
+                <Property Name="MOT_CAT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Transportation Mode Category" sap:sortable="false"/>
+                <Property Name="SHIPPING_TYPE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Shipping Type" sap:sortable="false"/>
+                <Property Name="TRAFFIC_DIRECT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Shipping Type" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MOVEM_TYPE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Movement Type" sap:sortable="false"/>
+                <Property Name="SALES_ORG_ID" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Sales Organization" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SALES_OFF_ID" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Sales Office" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SALES_GROUP_ID" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Sales Group" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SHIPPER_ID" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Shipper" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CONSIGNEE_ID" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Ship-to Party" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ORDER_PARTY_ID" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Sold-to Party" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LIFECYCLE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Lifecycle Status" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SRC_LOC_ID" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Source Location" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SRC_LOC_UNLOCODE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="UN/LOCODE" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PIC_EAR_REQ" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Requested Pick-Up Date" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PIC_EAR_CNF" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Confirmed Pick-Up Date" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DES_LOC_ID" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Destination Location" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DES_LOC_UNLOCODE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="UN/LOCODE" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DEL_LAT_REQ" Type="Edm.String" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DEL_LAT_CNF" Type="Edm.String" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ORDER_DATE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Order Date" sap:sortable="false"/>
+                <NavigationProperty Name="HeaderToItem" Relationship="ZTM_FRW_ORDER_SRV.HeaderToItem" FromRole="FromRole_HeaderToItem" ToRole="ToRole_HeaderToItem"/>
+            </EntityType>
+            <EntityType Name="FrwItems" sap:label="Item Details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DB_KEY"/>
+                </Key>
+                <Property Name="DB_KEY" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="DB Key" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ROOT_KEY" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Parent Key" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ITEM_DESCR" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Item Description" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ITEM_CAT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Item Category" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="GRO_WEI_UNI" Type="Edm.String" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="GRO_VOL_VAL" Type="Edm.String" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="GRO_VOL_UNI" Type="Edm.String" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NET_WEI_VAL" Type="Edm.String" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NET_WEI_UNI" Type="Edm.String" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="QUA_PCS_VAL" Type="Edm.String" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="QUA_PCS_UNI" Type="Edm.String" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="GRO_WEI_VAL" Type="Edm.String" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PRODUCT_ID" Type="Edm.String" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ITEM_ID" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Item No" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZtmshSalesOff" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ExternalId"/>
+                </Key>
+                <Property Name="ExternalId" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Org. ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InternalId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Object ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Short" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Object abbr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Descr40" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZtmShSalesGrp" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ExternalId"/>
+                </Key>
+                <Property Name="ExternalId" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Org. ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InternalId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Object ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Short" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Object abbr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Descr40" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZtmShLoc" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LocId"/>
+                </Key>
+                <Property Name="LocType" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Street" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LocDesc" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CountryDesc" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Country" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RegionDesc" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Region" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="City" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PostCode" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="HouseNo" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UNLOCODE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LocId" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZtmShProduct" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Matnr"/>
+                </Key>
+                <Property Name="Maktg" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Spras" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Language" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="ZtmShTrqFwoType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Type"/>
+                </Key>
+                <Property Name="SalesGrpDesc" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SalesOrgDesc" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ShpTypDesc" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TrModeDesc" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ShippingType" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SalesGrp" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SalesOrg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TrafficDir" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TrMode" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="FWO Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DefaultTrqType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Default Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DefaultMotCat" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="TrM Category" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescriptionS" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Type Desc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Ztrmodcode" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vktra"/>
+                    <PropertyRef Name="Trmodcat"/>
+                </Key>
+                <Property Name="MainCarriage" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Main Carriage" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vktra" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Mode of Transp." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bezei" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Trmodcat" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="TMode Category" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vktrt" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="DG MoT Cat." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZtmshShtype" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ShippingType"/>
+                </Key>
+                <Property Name="MotDesc" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Trmodcat" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="TMode Category" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mot" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Mode of Transp." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ShippingType" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Shipping Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZtmShMvmty" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="MovemType"/>
+                </Key>
+                <Property Name="MovemType" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Movement Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescriptionS" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZtmshOrgunit" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ExternalId"/>
+                </Key>
+                <Property Name="ExternalId" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Org. ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InternalId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Object ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Short" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Object abbr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Descr40" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="HeaderToItem" sap:content-version="1">
+                <End Type="ZTM_FRW_ORDER_SRV.FrwHeader" Multiplicity="1" Role="FromRole_HeaderToItem"/>
+                <End Type="ZTM_FRW_ORDER_SRV.FrwItems" Multiplicity="*" Role="ToRole_HeaderToItem"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_HeaderToItem">
+                        <PropertyRef Name="ROOT_KEY"/>
+                    </Principal>
+                    <Dependent Role="ToRole_HeaderToItem">
+                        <PropertyRef Name="ROOT_KEY"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZTM_FRW_ORDER_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="FrwHeaderSet" EntityType="ZTM_FRW_ORDER_SRV.FrwHeader" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="FrwItemsSet" EntityType="ZTM_FRW_ORDER_SRV.FrwItems" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZtmshSalesOffSet" EntityType="ZTM_FRW_ORDER_SRV.ZtmshSalesOff" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZtmshSalesGrpSet" EntityType="ZTM_FRW_ORDER_SRV.ZtmShSalesGrp" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZtmShLocSet" EntityType="ZTM_FRW_ORDER_SRV.ZtmShLoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ztmShProductSet" EntityType="ZTM_FRW_ORDER_SRV.ZtmShProduct" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZtmShTrqFwoTypeSet" EntityType="ZTM_FRW_ORDER_SRV.ZtmShTrqFwoType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZtrmodcodeSet" EntityType="ZTM_FRW_ORDER_SRV.Ztrmodcode" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZtmshShtypeSet" EntityType="ZTM_FRW_ORDER_SRV.ZtmshShtype" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZtmShMvmtySet" EntityType="ZTM_FRW_ORDER_SRV.ZtmShMvmty" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ztmshOrgunitSet" EntityType="ZTM_FRW_ORDER_SRV.ZtmshOrgunit" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="HeaderToItemSet" Association="ZTM_FRW_ORDER_SRV.HeaderToItem" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="FrwHeaderSet" Role="FromRole_HeaderToItem"/>
+                    <End EntitySet="FrwItemsSet" Role="ToRole_HeaderToItem"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <atom:link rel="self" href="http://sap-s4-hana.internal.cloudapp.net:8001/sap/opu/odata/sap/ZTM_FRW_ORDER_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://sap-s4-hana.internal.cloudapp.net:8001/sap/opu/odata/sap/ZTM_FRW_ORDER_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
